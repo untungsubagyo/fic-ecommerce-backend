@@ -1,0 +1,2207 @@
+{
+	"info": {
+		"_postman_id": "6f891aed-4213-40da-b871-e7c860cf21a5",
+		"name": "FIC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6829937",
+		"_collection_link": "https://era-siakad.postman.co/workspace/My-Workspace~0c242fb9-5786-4b71-8505-567a0c98bd69/collection/6829937-6f891aed-4213-40da-b871-e7c860cf21a5?action=share&creator=6829937&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register User STRAPI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Untungs\",\r\n    \"username\":\"untungs\",\r\n    \"password\":\"123456\",\r\n    \"email\":\"untungs@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/auth/local/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"auth",
+						"local",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/products?populate=*",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "populate",
+							"value": "*"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "519"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 14:11:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"name\": \"Thinkpad T470s i7 20GB 256GB\",\n                \"description\": \"Laptop Thinkpad T470s \\nCore i7 6600u\\nRam 20GB\\nSSD 256GB\",\n                \"quantity\": 1,\n                \"price\": \"4500000\",\n                \"inStock\": true,\n                \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n                \"supplier\": \"Kappy Computer\",\n                \"createdAt\": \"2023-07-13T14:07:57.766Z\",\n                \"updatedAt\": \"2023-07-14T14:11:20.503Z\",\n                \"publishedAt\": \"2023-07-13T14:08:41.940Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 1\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identifier\":\"untungs@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/auth/local/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"auth",
+						"local",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\":\"untungs@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "10"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "6"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1689343535"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "342"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 14:05:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MzQzNTExLCJleHAiOjE2OTE5MzU1MTF9.Ds5zMsmsCOdkBzShbes9I5nAmRqIABsXL6m3bF28wrA\",\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"untungs\",\n        \"email\": \"untungs@gmail.com\",\n        \"provider\": \"local\",\n        \"confirmed\": true,\n        \"blocked\": false,\n        \"createdAt\": \"2023-07-13T13:43:30.450Z\",\n        \"updatedAt\": \"2023-07-13T13:43:30.450Z\"\n    }\n}"
+				},
+				{
+					"name": "400 ERR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\":\"untungs@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "10"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "9"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1689343698"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 14:07:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"error\": {\n        \"status\": 400,\n        \"name\": \"ValidationError\",\n        \"message\": \"Invalid identifier or password\",\n        \"details\": {}\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api get product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "456"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 14:12:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"name\": \"Thinkpad T470s i7 20GB 256GB\",\n            \"description\": \"Laptop Thinkpad T470s \\nCore i7 6600u\\nRam 20GB\\nSSD 256GB\",\n            \"quantity\": 1,\n            \"price\": \"4500000\",\n            \"inStock\": true,\n            \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n            \"supplier\": \"Kappy Computer\",\n            \"createdAt\": \"2023-07-13T14:07:57.766Z\",\n            \"updatedAt\": \"2023-07-14T14:11:20.503Z\",\n            \"publishedAt\": \"2023-07-13T14:08:41.940Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "api create product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MzQzNTExLCJleHAiOjE2OTE5MzU1MTF9.Ds5zMsmsCOdkBzShbes9I5nAmRqIABsXL6m3bF28wrA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n            \r\n        \"name\": \"Thinkpad X1 Carbon i7 8GB 256GB\",\r\n        \"description\": \"Laptop Thinkpad X1 Carbon \\nCore i7 6600u\\nRam 8GB\\nSSD 256GB\",\r\n        \"quantity\": 1,\r\n        \"price\": \"5000000\",\r\n        \"inStock\": true,\r\n        \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\r\n        \"supplier\": \"Kappy Computer\"\r\n    } \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \r\n        \"name\": \"Thinkpad X1 Carbon i7 8GB 256GB\",\r\n        \"description\": \"Laptop Thinkpad X1 Carbon \\nCore i7 6600u\\nRam 8GB\\nSSD 256GB\",\r\n        \"quantity\": 1,\r\n        \"price\": \"5000000\",\r\n        \"inStock\": true,\r\n        \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\r\n        \"supplier\": \"Kappy Computer\"\r\n    } \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "462"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 14:22:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"attributes\": {\n            \"name\": \"Thinkpad X1 Carbon i7 8GB 256GB\",\n            \"description\": \"Laptop Thinkpad X1 Carbon \\nCore i7 6600u\\nRam 8GB\\nSSD 256GB\",\n            \"quantity\": 1,\n            \"price\": \"5000000\",\n            \"inStock\": true,\n            \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n            \"supplier\": \"Kappy Computer\",\n            \"createdAt\": \"2023-07-14T14:22:19.459Z\",\n            \"updatedAt\": \"2023-07-14T14:22:19.459Z\",\n            \"publishedAt\": \"2023-07-14T14:22:19.458Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "api edit product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":{\r\n        \"supplier\": \"Butterfly Computer\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"supplier\": \"Butterfly Computer\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "460"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 15:27:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"name\": \"Thinkpad T470s i7 20GB 256GB\",\n            \"description\": \"Laptop Thinkpad T470s \\nCore i7 6600u\\nRam 20GB\\nSSD 256GB\",\n            \"quantity\": 1,\n            \"price\": \"4500000\",\n            \"inStock\": true,\n            \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n            \"supplier\": \"Butterfly Computer\",\n            \"createdAt\": \"2023-07-13T14:07:57.766Z\",\n            \"updatedAt\": \"2023-07-14T15:27:37.704Z\",\n            \"publishedAt\": \"2023-07-13T14:08:41.940Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "api delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1337/api/products/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "462"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 15:29:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"attributes\": {\n            \"name\": \"Thinkpad X1 Carbon i7 8GB 256GB\",\n            \"description\": \"Laptop Thinkpad X1 Carbon \\nCore i7 6600u\\nRam 8GB\\nSSD 256GB\",\n            \"quantity\": 1,\n            \"price\": \"5000000\",\n            \"inStock\": true,\n            \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n            \"supplier\": \"Kappy Computer\",\n            \"createdAt\": \"2023-07-14T14:22:19.459Z\",\n            \"updatedAt\": \"2023-07-14T14:22:19.459Z\",\n            \"publishedAt\": \"2023-07-14T14:22:19.458Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "api upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/C:/Users/untun/Documents/thinkpad.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/untun/Documents/thinkpad.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "992"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 15:42:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 6,\n        \"name\": \"thinkpad.jpg\",\n        \"alternativeText\": null,\n        \"caption\": null,\n        \"width\": 960,\n        \"height\": 720,\n        \"formats\": {\n            \"thumbnail\": {\n                \"name\": \"thumbnail_thinkpad.jpg\",\n                \"hash\": \"thumbnail_thinkpad_bed7bf40d9\",\n                \"ext\": \".jpg\",\n                \"mime\": \"image/jpeg\",\n                \"path\": null,\n                \"width\": 208,\n                \"height\": 156,\n                \"size\": 7.56,\n                \"url\": \"/uploads/thumbnail_thinkpad_bed7bf40d9.jpg\"\n            },\n            \"small\": {\n                \"name\": \"small_thinkpad.jpg\",\n                \"hash\": \"small_thinkpad_bed7bf40d9\",\n                \"ext\": \".jpg\",\n                \"mime\": \"image/jpeg\",\n                \"path\": null,\n                \"width\": 500,\n                \"height\": 375,\n                \"size\": 33.72,\n                \"url\": \"/uploads/small_thinkpad_bed7bf40d9.jpg\"\n            },\n            \"medium\": {\n                \"name\": \"medium_thinkpad.jpg\",\n                \"hash\": \"medium_thinkpad_bed7bf40d9\",\n                \"ext\": \".jpg\",\n                \"mime\": \"image/jpeg\",\n                \"path\": null,\n                \"width\": 750,\n                \"height\": 563,\n                \"size\": 67.73,\n                \"url\": \"/uploads/medium_thinkpad_bed7bf40d9.jpg\"\n            }\n        },\n        \"hash\": \"thinkpad_bed7bf40d9\",\n        \"ext\": \".jpg\",\n        \"mime\": \"image/jpeg\",\n        \"size\": 100.32,\n        \"url\": \"/uploads/thinkpad_bed7bf40d9.jpg\",\n        \"previewUrl\": null,\n        \"provider\": \"local\",\n        \"provider_metadata\": null,\n        \"createdAt\": \"2023-07-14T15:42:56.783Z\",\n        \"updatedAt\": \"2023-07-14T15:42:56.783Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "api post media image uploaded into images",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":{\r\n        \"images\":[\r\n            {\"id\":6}\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"images\":[\r\n            {\"id\":6}\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "461"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 16:09:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"attributes\": {\n            \"name\": \"Thinkpad T480s i7 16GB 512GB\",\n            \"description\": \"Laptop Thinkpad T480s \\nCore i7 7800u\\nRam 16GB\\nSSD 512GB\",\n            \"quantity\": 1,\n            \"price\": \"6000000\",\n            \"inStock\": true,\n            \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n            \"supplier\": \"Pusat Laptop Second\",\n            \"createdAt\": \"2023-07-14T14:20:50.919Z\",\n            \"updatedAt\": \"2023-07-14T16:09:42.406Z\",\n            \"publishedAt\": \"2023-07-14T14:20:50.917Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "api get order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "843"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 20:51:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"items\": [\n                    {},\n                    {}\n                ],\n                \"totalPrice\": \"500000\",\n                \"shippingAddress\": \"Jl. Sisingamangaraja 76 Yogyakarta\",\n                \"courierName\": \"J&T\",\n                \"shippingCost\": \"20000\",\n                \"createdAt\": \"2023-07-14T20:42:25.582Z\",\n                \"updatedAt\": \"2023-07-14T20:42:34.952Z\",\n                \"publishedAt\": \"2023-07-14T20:42:34.945Z\",\n                \"statusOrder\": \"waitingPayment\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"items\": [\n                    {\n                        \"id\": 1,\n                        \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\n                        \"qty\": 1,\n                        \"price\": 4500000\n                    },\n                    {\n                        \"id\": 2,\n                        \"productName\": \"Thinkpad T480s i7 16GB 512GB\",\n                        \"qty\": 1,\n                        \"price\": 6000000\n                    }\n                ],\n                \"totalPrice\": \"10650000\",\n                \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\n                \"courierName\": \"POS\",\n                \"shippingCost\": \"150000\",\n                \"createdAt\": \"2023-07-14T20:46:57.965Z\",\n                \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\n                \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\n                \"statusOrder\": \"waitingPayment\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 2\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\r\n                    \"qty\": 1,\r\n                    \"price\": 4500000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"4650000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"150000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\r\n                    \"qty\": 3,\r\n                    \"price\": 4500000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"13950000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"450000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "392"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 20:55:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"attributes\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\n                    \"qty\": 3,\n                    \"price\": 4500000\n                }\n            ],\n            \"totalPrice\": \"13950000\",\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\n            \"courierName\": \"J&T\",\n            \"shippingCost\": \"450000\",\n            \"createdAt\": \"2023-07-14T20:55:58.240Z\",\n            \"updatedAt\": \"2023-07-14T20:55:58.240Z\",\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\n            \"statusOrder\": \"waitingPayment\"\n        }\n    },\n    \"meta\": {}\n}"
+				},
+				{
+					"name": "200 OK with midtrans response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\r\n                    \"qty\": 3,\r\n                    \"price\": 4500000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"13950000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"450000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 21:33:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"ef8ae198-fbba-4647-b963-0746d07ce3f6\",\n    \"redirect_url\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/ef8ae198-fbba-4647-b963-0746d07ce3f6\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api create order core",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwtToken\n}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T480s i7 16GB 512GB\",\r\n                    \"qty\": 2,\r\n                    \"price\": 6000000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"12300000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"300000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\r\n                    \"qty\": 3,\r\n                    \"price\": 4500000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"13950000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"450000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "392"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 20:55:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"attributes\": {\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\n                    \"qty\": 3,\n                    \"price\": 4500000\n                }\n            ],\n            \"totalPrice\": \"13950000\",\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\n            \"courierName\": \"J&T\",\n            \"shippingCost\": \"450000\",\n            \"createdAt\": \"2023-07-14T20:55:58.240Z\",\n            \"updatedAt\": \"2023-07-14T20:55:58.240Z\",\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\n            \"statusOrder\": \"waitingPayment\"\n        }\n    },\n    \"meta\": {}\n}"
+				},
+				{
+					"name": "200 OK with midtrans response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"productName\": \"Thinkpad T470s i7 20GB 256GB\",\r\n                    \"qty\": 3,\r\n                    \"price\": 4500000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"13950000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"450000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 21:33:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"ef8ae198-fbba-4647-b963-0746d07ce3f6\",\n    \"redirect_url\": \"https://app.sandbox.midtrans.com/snap/v3/redirection/ef8ae198-fbba-4647-b963-0746d07ce3f6\"\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwtToken\n}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"items\": [\r\n                {\r\n                    \"id\": 2,\r\n                    \"productName\": \"Thinkpad T480s i7 16GB 512GB\",\r\n                    \"qty\": 2,\r\n                    \"price\": 6000000\r\n                }\r\n            ],\r\n            \"totalPrice\": \"12300000\",\r\n            \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\r\n            \"courierName\": \"J&T\",\r\n            \"shippingCost\": \"300000\",\r\n            \"createdAt\": \"2023-07-14T20:46:57.965Z\",\r\n            \"updatedAt\": \"2023-07-14T20:47:00.519Z\",\r\n            \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\r\n            \"statusOrder\": \"waitingPayment\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "926"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Jul 2023 23:56:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status_code\": \"201\",\n    \"status_message\": \"GoPay transaction is created\",\n    \"transaction_id\": \"eec437c0-6ecf-4591-9607-ee7237ffe628\",\n    \"order_id\": \"6\",\n    \"merchant_id\": \"G294460015\",\n    \"gross_amount\": \"12300000.00\",\n    \"currency\": \"IDR\",\n    \"payment_type\": \"gopay\",\n    \"transaction_time\": \"2023-07-15 06:56:52\",\n    \"transaction_status\": \"pending\",\n    \"fraud_status\": \"accept\",\n    \"actions\": [\n        {\n            \"name\": \"generate-qr-code\",\n            \"method\": \"GET\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/gopay/eec437c0-6ecf-4591-9607-ee7237ffe628/qr-code\"\n        },\n        {\n            \"name\": \"deeplink-redirect\",\n            \"method\": \"GET\",\n            \"url\": \"https://simulator.sandbox.midtrans.com/gopay/partner/app/payment-pin?id=29bd33d2-e668-4517-9580-c568f6ce0eb5\"\n        },\n        {\n            \"name\": \"get-status\",\n            \"method\": \"GET\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/eec437c0-6ecf-4591-9607-ee7237ffe628/status\"\n        },\n        {\n            \"name\": \"cancel\",\n            \"method\": \"POST\",\n            \"url\": \"https://api.sandbox.midtrans.com/v2/eec437c0-6ecf-4591-9607-ee7237ffe628/cancel\"\n        }\n    ],\n    \"expiry_time\": \"2023-07-15 07:11:52\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api-payment-callbacks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transaction_time\": \"2023-07-15 07:22:12\",\r\n  \"transaction_status\": \"settlement\",\r\n  \"transaction_id\": \"5ff07a78-5731-498e-906f-8d2d68e9db28\",\r\n  \"status_message\": \"midtrans payment notification\",\r\n  \"status_code\": \"200\",\r\n  \"signature_key\": \"b9781a11abfe563edfe2c483a0c034163654bf9c55ac276e31effcd4356b7baf4fda049e93efbea41fd89d696bfb764f52fdd87bf2484b57193634df58eff2dc\",\r\n  \"settlement_time\": \"2023-07-15 07:24:01\",\r\n  \"permata_va_number\": \"6000072998160041\",\r\n  \"payment_type\": \"bank_transfer\",\r\n  \"order_id\": \"9\",\r\n  \"merchant_id\": \"G294460015\",\r\n  \"gross_amount\": \"12300000.00\",\r\n  \"fraud_status\": \"accept\",\r\n  \"expiry_time\": \"2023-07-16 07:22:12\",\r\n  \"currency\": \"IDR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/payment-callbacks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"payment-callbacks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n            \"history\": \r\n            { \r\n                \"transaction_time\": \"2023-07-15 07:03:27\",\r\n                \"transaction_status\": \"pending\",\r\n                \"transaction_id\": \"dbaf5a25-dbdd-4884-add0-0a1cab2049b3\",\r\n                \"status_message\": \"midtrans payment notification\",\r\n                \"status_code\": \"201\",\r\n                \"signature_key\": \"39446ea7fbd389613ab76d2084f334ae80751a5b4653aa94b723cb01cbcd37e8099b9d6065e8eaedbc73d25efe0cedafa82abde5c03d9ae89d456460b2d96d62\",\r\n                \"payment_type\": \"gopay\",\r\n                \"order_id\": \"7\",\r\n                \"merchant_id\": \"G294460015\",\r\n                \"gross_amount\": \"12300000.00\",\r\n                \"fraud_status\": \"accept\",\r\n                \"expiry_time\": \"2023-07-15 07:18:27\",\r\n                \"currency\": \"IDR\"\r\n            }\r\n            \r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/payment-callbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"payment-callbacks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "688"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jul 2023 00:08:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"history\": {\n                \"transaction_time\": \"2023-07-15 07:03:27\",\n                \"transaction_status\": \"pending\",\n                \"transaction_id\": \"dbaf5a25-dbdd-4884-add0-0a1cab2049b3\",\n                \"status_message\": \"midtrans payment notification\",\n                \"status_code\": \"201\",\n                \"signature_key\": \"39446ea7fbd389613ab76d2084f334ae80751a5b4653aa94b723cb01cbcd37e8099b9d6065e8eaedbc73d25efe0cedafa82abde5c03d9ae89d456460b2d96d62\",\n                \"payment_type\": \"gopay\",\n                \"order_id\": \"7\",\n                \"merchant_id\": \"G294460015\",\n                \"gross_amount\": \"12300000.00\",\n                \"fraud_status\": \"accept\",\n                \"expiry_time\": \"2023-07-15 07:18:27\",\n                \"currency\": \"IDR\"\n            },\n            \"createdAt\": \"2023-07-15T00:08:51.951Z\",\n            \"updatedAt\": \"2023-07-15T00:08:51.951Z\",\n            \"publishedAt\": \"2023-07-15T00:08:51.947Z\"\n        }\n    },\n    \"meta\": {}\n}"
+				},
+				{
+					"name": "200 OK purchased",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"transaction_time\": \"2023-07-15 07:22:12\",\r\n  \"transaction_status\": \"settlement\",\r\n  \"transaction_id\": \"5ff07a78-5731-498e-906f-8d2d68e9db28\",\r\n  \"status_message\": \"midtrans payment notification\",\r\n  \"status_code\": \"200\",\r\n  \"signature_key\": \"b9781a11abfe563edfe2c483a0c034163654bf9c55ac276e31effcd4356b7baf4fda049e93efbea41fd89d696bfb764f52fdd87bf2484b57193634df58eff2dc\",\r\n  \"settlement_time\": \"2023-07-15 07:24:01\",\r\n  \"permata_va_number\": \"6000072998160041\",\r\n  \"payment_type\": \"bank_transfer\",\r\n  \"order_id\": \"9\",\r\n  \"merchant_id\": \"G294460015\",\r\n  \"gross_amount\": \"12300000.00\",\r\n  \"fraud_status\": \"accept\",\r\n  \"expiry_time\": \"2023-07-16 07:22:12\",\r\n  \"currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/payment-callbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"payment-callbacks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "362"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jul 2023 00:52:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"productName\": \"Thinkpad T480s i7 16GB 512GB\",\n                \"qty\": 2,\n                \"price\": 6000000\n            }\n        ],\n        \"totalPrice\": \"12300000\",\n        \"shippingAddress\": \"Jl. Sisingamangaraja 76\",\n        \"courierName\": \"J&T\",\n        \"shippingCost\": \"300000\",\n        \"createdAt\": \"2023-07-15T00:22:11.039Z\",\n        \"updatedAt\": \"2023-07-15T00:52:07.517Z\",\n        \"publishedAt\": \"2023-07-14T20:47:00.511Z\",\n        \"statusOrder\": \"purchased\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "api get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Strapi <strapi.io>"
+						},
+						{
+							"key": "Content-Length",
+							"value": "966"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Jul 2023 02:43:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"name\": \"Thinkpad T470s i7 20GB 256GB\",\n                \"description\": \"Laptop Thinkpad T470s \\nCore i7 6600u\\nRam 20GB\\nSSD 256GB\",\n                \"quantity\": 1,\n                \"price\": \"4500000\",\n                \"inStock\": true,\n                \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n                \"supplier\": \"Butterfly Computer\",\n                \"createdAt\": \"2023-07-13T14:07:57.766Z\",\n                \"updatedAt\": \"2023-07-14T15:27:37.704Z\",\n                \"publishedAt\": \"2023-07-13T14:08:41.940Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"attributes\": {\n                \"name\": \"Thinkpad T480s i7 16GB 512GB\",\n                \"description\": \"Laptop Thinkpad T480s \\nCore i7 7800u\\nRam 16GB\\nSSD 512GB\",\n                \"quantity\": 1,\n                \"price\": \"6000000\",\n                \"inStock\": true,\n                \"image\": \"https://www.notebooksrus.net.au/wordpress/wp-content/uploads/2015/03/ThinkPad-T450s-1-450x385.jpg\",\n                \"supplier\": \"Pusat Laptop Second\",\n                \"createdAt\": \"2023-07-14T14:20:50.919Z\",\n                \"updatedAt\": \"2023-07-14T16:09:42.406Z\",\n                \"publishedAt\": \"2023-07-14T14:20:50.917Z\"\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 2\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}
